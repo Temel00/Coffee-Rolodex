@@ -1,0 +1,38 @@
+appId: com.coffee-rolodex.app
+productName: Coffee Rolodex
+copyright: Copyright © 2024
+
+directories:
+  buildResources: resources
+  output: dist
+
+files:
+  - out/**/*
+  - node_modules/**/*
+  - "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}"
+  - "!node_modules/*/{test,__tests__,tests,powered-test,example,examples}"
+  - "!node_modules/.bin"
+  - "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}"
+  - "!.editorconfig"
+  - "!**/._*"
+  - "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}"
+
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - arm64
+        - armv7l
+    - target: deb
+      arch:
+        - arm64
+        - armv7l
+  category: Utility
+  executableName: coffee-rolodex
+
+# Rebuild native modules (better-sqlite3) for the target
+npmRebuild: true
+
+# Kiosk / autostart hints (user wires these up in the OS)
+extraMetadata:
+  main: out/main/index.js

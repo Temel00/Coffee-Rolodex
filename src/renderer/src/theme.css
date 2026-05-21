@@ -1,0 +1,73 @@
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * COFFEE ROLODEX — DESIGN TOKENS
+ *
+ * This is the single source of truth for the entire visual theme.
+ * Edit values here; Tailwind classes and component styles automatically
+ * pick them up via tailwind.config.ts.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+:root {
+  /* ── Colors ─────────────────────────────────────────────────────────────── */
+
+  /* Backgrounds */
+  --color-bg:               #0f0906;   /* deep espresso */
+  --color-surface:          #1c1008;   /* dark roast surface */
+  --color-surface-elevated: #2d1b0e;   /* elevated card */
+  --color-surface-hover:    #3a2415;   /* hover / press state */
+
+  /* Brand */
+  --color-primary:          #c8824a;   /* caramel amber */
+  --color-primary-hover:    #d99560;   /* lighter caramel */
+  --color-primary-text:     #0f0906;   /* text on primary bg */
+
+  /* Text */
+  --color-text:             #f5ede3;   /* cream white */
+  --color-text-muted:       #9e8070;   /* muted cream */
+  --color-text-faint:       #5c4535;   /* very faint */
+
+  /* Borders */
+  --color-border:           #3a2215;   /* visible border */
+  --color-border-subtle:    #1f1009;   /* barely-there border */
+
+  /* Semantic */
+  --color-success:          #6ab04c;   /* active / fresh */
+  --color-danger:           #e05555;   /* delete / error */
+  --color-warning:          #d4a843;   /* caution */
+  --color-inactive:         #7a6050;   /* finished / inactive badge */
+
+  /* ── Border Radius ──────────────────────────────────────────────────────── */
+
+  --radius-sm:  4px;
+  --radius-md:  10px;
+  --radius-lg:  18px;
+  --radius-xl:  28px;
+
+  /* ── Font Sizes ─────────────────────────────────────────────────────────── */
+
+  --font-sm:    14px;
+  --font-base:  17px;
+  --font-lg:    20px;
+  --font-xl:    26px;
+  --font-2xl:   36px;
+  --font-3xl:   52px;
+
+  /* ── Spacing ────────────────────────────────────────────────────────────── */
+  /* These complement Tailwind's numeric scale (p-4 = 16px stays as-is).     */
+  /* Use these for design-system–named spacing needs.                         */
+
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;   /* minimum touch target size */
+
+  /* ── Transitions ────────────────────────────────────────────────────────── */
+
+  --transition-fast:   120ms ease;
+  --transition-normal: 200ms ease;
+}
