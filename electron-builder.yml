@@ -23,10 +23,6 @@ linux:
       arch:
         - arm64
         - armv7l
-    - target: deb
-      arch:
-        - arm64
-        - armv7l
   category: Utility
   executableName: coffee-rolodex
 

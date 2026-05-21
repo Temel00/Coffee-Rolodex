@@ -2,6 +2,10 @@
   "name": "coffee-rolodex",
   "version": "1.0.0",
   "description": "Local-first desktop app for tracking espresso coffee bags",
+  "author": {
+    "name": "Temel",
+    "email": "temelaudio@gmail.com"
+  },
   "main": "./out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",

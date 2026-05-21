@@ -7,6 +7,9 @@ on:
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build-armv7l:
     runs-on: ubuntu-latest
@@ -36,8 +39,10 @@ jobs:
           CC_host: gcc
           CXX_host: g++
 
-      - name: Rename to predictable filename
-        run: mv dist/*.AppImage dist/coffee-rolodex-armv7l.AppImage
+      - name: Rename to predictable filenames
+        run: |
+          mv dist/*arm64.AppImage dist/coffee-rolodex-arm64.AppImage
+          mv dist/*armv7l.AppImage dist/coffee-rolodex-armv7l.AppImage
 
       - name: Publish to GitHub Release
         run: |
@@ -45,6 +50,7 @@ jobs:
           gh release create latest \
             --title "Latest Build" \
             --notes "Auto-built from master branch" \
+            dist/coffee-rolodex-arm64.AppImage \
             dist/coffee-rolodex-armv7l.AppImage
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
