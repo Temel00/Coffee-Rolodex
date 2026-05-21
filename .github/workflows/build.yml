@@ -38,6 +38,7 @@ jobs:
           CXX: arm-linux-gnueabihf-g++
           CC_host: gcc
           CXX_host: g++
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rename to predictable filenames
         run: |
