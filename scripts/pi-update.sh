@@ -3,8 +3,17 @@
 # Usage: bash ~/pi-update.sh
 
 REPO="Temel00/Coffee-Rolodex"
-DOWNLOAD_URL="https://github.com/$REPO/releases/download/latest/coffee-rolodex-armv7l.AppImage"
 INSTALL_PATH="$HOME/coffee-rolodex.AppImage"
+
+# Auto-detect architecture
+ARCH=$(uname -m)
+if [ "$ARCH" = "aarch64" ]; then
+  APPIMAGE="coffee-rolodex-arm64.AppImage"
+else
+  APPIMAGE="coffee-rolodex-armv7l.AppImage"
+fi
+DOWNLOAD_URL="https://github.com/$REPO/releases/download/latest/$APPIMAGE"
+echo "Detected architecture: $ARCH — downloading $APPIMAGE"
 
 echo "Downloading latest Coffee Rolodex..."
 wget -q --show-progress "$DOWNLOAD_URL" -O "$INSTALL_PATH.tmp"
